@@ -15,13 +15,13 @@ public class AfterAopAspect {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@After("execution(* com.sebsonic2o.spring.aop.springaop.business.*.*(..))")
+	@After("com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.businessLayerExecution()")
 	public void doAfterAction(JoinPoint joinPoint) {
 		logger.info("After {}", joinPoint);
 	}
 
 	@AfterReturning(
-			value="execution(* com.sebsonic2o.spring.aop.springaop.business.*.*(..))",
+			value="com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.businessLayerExecution()",
 			returning="result"
 			)
 	public void doAfterReturningAction(JoinPoint joinPoint, Object result) {
@@ -29,7 +29,7 @@ public class AfterAopAspect {
 	}
 
 	@AfterThrowing(
-			value="execution(* com.sebsonic2o.spring.aop.springaop.business.*.*(..))",
+			value="com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.businessLayerExecution()",
 			throwing="exception"
 			)
 	public void doAfterThrowingAction(JoinPoint joinPoint, Object exception) {

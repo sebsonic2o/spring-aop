@@ -14,7 +14,7 @@ public class UserAccessAspect {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	// intercept method calls before execution by defining "pointcut"
-	@Before("execution(* com.sebsonic2o.spring.aop.springaop.business.*.*(..))")
+	@Before("com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.businessLayerExecutionWithWithin()")
 	public void doBeforeAction(JoinPoint joinPoint) {
 		// intercept logic aka "advice"
 		logger.info("Check for user access");
