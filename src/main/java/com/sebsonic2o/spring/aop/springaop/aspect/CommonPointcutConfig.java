@@ -18,4 +18,7 @@ public class CommonPointcutConfig {
 
 	@Pointcut("com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.dataLayerExecution() && com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.businessLayerExecution()")
 	public void allLayerExecution() {}
+
+	@Pointcut("@annotation(com.sebsonic2o.spring.aop.springaop.aspect.TrackTime)")
+	public void trackTimeAnnotation() {}
 }

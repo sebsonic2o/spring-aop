@@ -13,7 +13,7 @@ public class PerformanceAspect {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Around("com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.beanContainingBusiness()")
+	@Around("com.sebsonic2o.spring.aop.springaop.aspect.CommonPointcutConfig.trackTimeAnnotation()")
 	public Object doAroundAction(ProceedingJoinPoint joinPoint) throws Throwable {
 		long startTime = System.currentTimeMillis();
 		Object result = joinPoint.proceed();
